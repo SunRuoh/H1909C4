@@ -7,14 +7,18 @@
 </head>
 <body>
 <div id="app">
-	<h3>{{info}}H1909C</h3>
+	<input type="text" v-model="num">
+	<h3>{{info}}H1909C有{{num}}位同学</h3>
+	<button v-on:click="num++">加</button>
+	<button @click="num--">减</button>
 </div>
 <script type="text/javascript">
 	//实例化VUE
 	var app = new Vue({
 		el:"#app",
 		data:{
-			info:"小实训"
+			info:"小实训",
+			num:44
 		}
 	});
 	

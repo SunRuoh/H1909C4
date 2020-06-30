@@ -8,26 +8,28 @@
 <body>
 <!-- 创建模板 -->
 <div id="app">
-
-	姓名:<input type="text" v-model="name">
-	{{age}}
-	<button @click="add">加</button>
+姓名:<input type="text" v-model="name">
+{{age}}
+<button @click="add">加</button>
+<button @click="rem">减</button>
 </div>
 <script type="text/javascript">
 //创建Vue实例
  var app= new Vue({
 	 el:"#app",
-	 date:{
-		 name:"张三"
-		 age:18
-	 },
-	 methods:{
-		 add:function(){
-			 app.age++;
-			 //this.age++;
-		 }
-	 }
-	 
+	data:{
+		name:"张三",
+		age:18
+	},
+	methods:{
+		add:function(){
+			//this.agg++;
+			app.age++;
+		},
+		rem(){
+			app.age--;
+		}
+	}
  });
 </script>
 </body>
