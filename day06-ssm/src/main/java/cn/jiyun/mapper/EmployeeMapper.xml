@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.jiyun.mapper.EmployeeMapper">
+
+<resultMap type="emp" id="findAll_emp">
+	<id column="eid" property="eid"/>
+	<result column="ename" property="ename"/>
+	<result column="sex" property="sex"/>
+	<result column="hobby" property="hobby"/>
+	<result column="birthday" property="birthday"/>
+	<result column="did" property="did"/>
+	<association property="dept" javaType="dept">
+		<id column="did" property="did"/>
+		<result column="dname" property="dname"/>
+	</association>
+</resultMap>
+</mapper>
