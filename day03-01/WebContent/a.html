@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<input v-model="age"><br>
+	<input type="button" v-model="age" v-on:click="age++" value="点击+1"><br>
+	<input type="button" v-model="age" @click="age++"><br>
+	姓名：{{name}}<span v-text="name"></span><span v-html="name"></span>
+	年龄：{{age}}
+	爱好：{{hobby}}
+</div>
+<div id="app1">
+	{{name}}
+</div>
+<script type="text/javascript">
+const app = new Vue({
+	el:"#app",
+	data:{
+		name:"<h1>我最好</h1>",
+		age:18,
+		hobby:"篮球，足球"
+	}
+});
+
+</script>
+
+</body>
+</html>

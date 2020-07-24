@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+
+账号：<input v-model="username"><br>
+密码：<input v-model="password"><br>
+<input type="button" @click="aaa">
+</div>
+<script type="text/javascript">
+const app = new Vue({
+	el:"#app",
+	data:{
+		username:"",
+		password:""
+	},
+	methods:{
+		// 进行ajax的数据传递
+		aaa:function(){
+			alert(this.username+this.password);
+		}
+	},
+	created(){
+		this.username="张三";
+	}
+	
+	
+});
+
+</script>
+</body>
+</html>

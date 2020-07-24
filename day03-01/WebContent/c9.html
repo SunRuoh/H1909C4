@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+
+<form>
+账号：<input name="username"><br>
+密码：<input name="password" type="password"><br>
+<input type="submit" value="登陆">
+</form>
+<hr>
+<aaa></aaa>
+</div>
+<script type="text/javascript">
+Vue.component("aaa",{
+	template:'<form>账号：<input name="username"><br>密码：<input name="password" type="password"><br><input type="submit" value="登陆"></form>'
+});
+
+const app = new Vue({
+	el:"#app",
+	data:{
+	},
+	
+});
+
+</script>
+</body>
+</html>

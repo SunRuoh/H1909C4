@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<input type="button" @click="show = !show" value="显示或不显示"><br>
+	<a v-if="show">取件</a><br>
+	<a v-if="flag=='未取件'">取件</a><br>
+	<a v-show="flag=='未取件'">取件</a><br>
+	<hr>
+	<ul >
+		<li v-for="i in 5" >
+			<span v-if="i%2===0">偶数{{i}}</span>
+			<span v-else style="background-color: bisque">奇数{{i}}</span>
+		</li>
+	</ul>
+	
+	<hr>
+	<input  v-bind:placeholder="vv"><br>
+	<input :placeholder="vv" :style="mm">
+	
+</div>
+<script type="text/javascript">
+const app = new Vue({
+	el:"#app",
+	data:{
+		show:false,
+		flag:"以取件",
+		vv:"请输入用户名",
+		mm:"color:green;"
+	}
+	
+});
+
+</script>
+</body>
+</html>

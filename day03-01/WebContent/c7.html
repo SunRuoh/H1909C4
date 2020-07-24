@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<h1>您的生日是：{{ toBirthday(birthday) }}
+</h1>
+<h2>您的生日是：{{ birth }}
+</h2>
+</div>
+<script type="text/javascript">
+const app = new Vue({
+	el:"#app",
+	data:{
+		birthday:1529032123201
+	},
+	methods:{
+		toBirthday(birthday){
+			return new Date(birthday).getFullYear() + '-'+ new Date(birthday).getMonth()+ '-' +
+			new Date(birthday).getDay();
+		}
+	},
+	computed:{
+		birth(){
+			return new Date(this.birthday).getFullYear() + '-'+ new Date(this.birthday).getMonth()+ '-' +
+			new Date(this.birthday).getDay();
+		}
+	}
+	
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<input v-model="user.name">{{user.name}}<br>
+<textarea rows="5" cols="5" v-model="user.name"></textarea><br>
+<select v-model="user.dept">
+	<option>--请选择--</option>
+	<option>财务</option>
+	<option>开发</option>
+	<option>人事</option>
+</select>{{user.dept}}<br>
+<input type="radio" name="sex" v-model="user.sex" value="男">男
+<input type="radio" name="sex" v-model="user.sex" value="女">女<br>
+{{user.sex}}
+<br>
+<input type="checkbox" name="hobby" v-model="user.hobby" value="篮球">篮球
+<input type="checkbox" name="hobby" v-model="user.hobby" value="足球">足球
+<input type="checkbox" name="hobby" v-model="user.hobby" value="排球">排球
+<input type="checkbox" name="hobby" v-model="user.hobby" value="棒球">棒球
+<br>
+{{user.hobby}}
+
+</div>
+<script type="text/javascript">
+const app = new Vue({
+	el:"#app",
+	data:{
+		user:{
+			name:"张三",
+			dept:"财务",
+			sex:"女",
+			hobby:["棒球","足球"]
+		}
+	},
+	methods:{
+	}
+	
+});
+
+</script>
+</body>
+</html>

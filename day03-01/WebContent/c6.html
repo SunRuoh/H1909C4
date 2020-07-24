@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/vue.js"></script>
+<style type="text/css">
+div#aa{
+	width: 500px;
+	height: 500px;
+	
+	
+}
+.red{
+	background-color: red;
+}
+.blue{
+	background-color: blue;
+}
+</style>
+</head>
+<body>
+<div id="app">
+	<button @click="color='red'">红</button>
+	<button @click="color='blue'">蓝</button>
+	<div id="aa" v-bind:class="color"></div>
+</div>
+<script type="text/javascript">
+const app = new Vue({
+	el:"#app",
+	data:{
+		color:"red"
+	}
+	
+});
+
+</script>
+</body>
+</html>

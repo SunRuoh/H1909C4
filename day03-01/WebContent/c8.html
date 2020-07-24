@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+请输入原价：<input v-model="price">
+折扣价：{{newPrice}}
+
+</div>
+<script type="text/javascript">
+const app = new Vue({
+	el:"#app",
+	data:{
+		price:0,
+		newPrice:0
+	},
+	// 监听
+	watch:{
+		price(n,o){
+			this.newPrice= n*0.8;
+		}
+	}
+	
+});
+
+</script>
+</body>
+</html>

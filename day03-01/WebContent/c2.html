@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	{{age}}
+	<input type="button" v-on:click="a" value="按钮"><br>
+	<input type="button" @click="a" value="按钮"><br>
+	<input type="button" @click="age++" value="按钮"><br>
+	
+	<input v-model="age" @blur="b"><br>
+	<input v-model="age" @change="b"><br>
+	
+	<div style="width: 500px;height: 500px;background-color: blue;" @mouseover="c">
+		<div style="width: 100px;height: 100px;background-color: red;" @mouseover="d" >
+		
+		</div>
+	
+	</div>
+	
+	<form @submit.prevent  action="http://baidu.com">
+		<input type="submit" value="提交">
+	</form>
+	
+	<input  @keyup.delete.prevent="e">
+	<input type="button"  @click.ctrl.alt="e">
+	
+</div>
+<script type="text/javascript">
+const app = new Vue({
+	el:"#app",
+	data:{
+		age:19
+	},
+	methods:{
+		a(){
+			alert("按钮被点击了！")
+		},
+		b(){
+			alert(this.age);
+		},
+		c(){
+			alert("大div被鼠标覆盖了！");
+		},
+		d(){
+
+			alert("小div被鼠标覆盖了！");
+		},
+		e(){
+			alert("删除被使用了！");
+		}
+	}
+	
+});
+
+</script>
+</body>
+</html>

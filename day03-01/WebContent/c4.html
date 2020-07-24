@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<ul> 
+		<li v-for="(i,index) in list">{{i}}==={{index}}</li>
+	</ul>
+	<ul> 
+		<li v-for="(value,key) in user">{{value}}==={{key}}</li>
+	</ul>
+	<table border="1">
+		<tr>
+			<td>编号</td>
+			<td>姓名</td>
+			<td>年龄</td>
+			<td>爱好</td>
+		</tr>
+		<tr v-for="(u,index) in users">
+			<td>{{index+1}}</td>
+			<td>{{u.name}}</td>
+			<td>{{u.age}}</td>
+			<td>{{u.hobby}}</td>
+		</tr>
+	</table>
+	
+</div>
+<script type="text/javascript">
+const app = new Vue({
+	el:"#app",
+	data:{
+		list:[2,4,6,8,10],
+		user:{
+			name:"张三",
+			age:"18",
+			hobby:"篮球，足球"
+		},
+		users:[
+			{name:"张三",age:"18",hobby:"篮球，足球"},
+			{name:"李四",age:"19",hobby:"篮球，足球"},
+			{name:"王五",age:"20",hobby:"篮球，足球"}
+		       ]
+	},
+	methods:{
+	}
+	
+});
+
+</script>
+</body>
+</html>
