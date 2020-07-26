@@ -6,9 +6,11 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.Test;
 
 public class outTest {
 
+	@Test
 	
 	public void out() throws Exception{
 
@@ -21,7 +23,7 @@ public class outTest {
 		//4.创建单元格并赋值
 		String [] title={"编号","姓名","性别","爱好","班级"};
 		for (int i = 0; i < title.length; i++) {
-			XSSFCell cell = row0.createCell(0);
+			XSSFCell cell = row0.createCell(i);
 			cell.setCellValue(title[i]);
 		}
 	
